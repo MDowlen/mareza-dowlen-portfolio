@@ -8,21 +8,21 @@ function refreshNexaPortfolioCard(){
   if(!card)return;
 
   const type=card.querySelector('.project-type');
-  if(type)type.textContent='AI COMMAND CENTER · FULL-STACK · NODE + PYTHON';
+  if(type)type.textContent='AI ENGINEERING COMMAND CENTER · REACT + NODE + PYTHON';
 
   const lead=card.querySelector('.project-lead');
-  if(lead)lead.textContent='A production AI Engineering Command Center that unifies repository intelligence, deterministic PR risk, deployment evidence, incident RCA, system health, and context-aware engineering conversations in one mixed-runtime product.';
+  if(lead)lead.textContent='A production AI Engineering Command Center that unifies repository intelligence, deterministic PR risk, deployment evidence, incident RCA, system health, and context-aware engineering conversations inside a premium mixed-runtime developer workspace.';
 
   const points=card.querySelector('.project-points');
   if(points)points.innerHTML=`
-    <li>Seven engineering surfaces: Overview, Repositories, PR Risk, Deployments, Incidents, Conversations, and System Health</li>
-    <li>Context-aware Ask Nexa: the client sends workspace intent while the server independently rebuilds authoritative PR, deployment, repository, and health evidence</li>
-    <li>Mixed-runtime Vercel architecture with React/Vite + Express/Node orchestration and a Python ForgeIncident RCA specialist</li>
-    <li>MongoDB Atlas persistence, OpenAI Responses API, deterministic evidence boundaries, and separate Node + Python GitHub Actions CI lanes</li>
+    <li>Seven production engineering surfaces: Overview, Repositories, PR Risk, Deployments, Incidents, Conversations, and System Health</li>
+    <li>Premium command-center UX with a keyboard-first command palette, addressable workspaces, responsive navigation, and evidence-first information hierarchy</li>
+    <li>Context-aware Ask Nexa: the client sends workspace intent while the server independently rebuilds authoritative repository, PR, deployment, and health evidence</li>
+    <li>Mixed-runtime Vercel architecture with React/Vite + Express/Node orchestration, Python ForgeIncident RCA, MongoDB Atlas, OpenAI, and separate Node/Python CI gates</li>
   `;
 
   const stack=card.querySelector('.project-stack');
-  if(stack)stack.innerHTML='<span>React</span><span>Node.js</span><span>Express</span><span>Python</span><span>MongoDB</span><span>OpenAI API</span><span>GitHub Actions</span><span>Vercel</span>';
+  if(stack)stack.innerHTML='<span>React</span><span>Vite</span><span>Node.js</span><span>Express</span><span>Python</span><span>MongoDB</span><span>OpenAI API</span><span>GitHub Actions</span><span>Vercel</span>';
 
   let note=card.querySelector('.project-note');
   if(!note){
@@ -31,7 +31,13 @@ function refreshNexaPortfolioCard(){
     const actions=card.querySelector('.card-actions');
     if(actions)card.insertBefore(note,actions);else card.appendChild(note);
   }
-  note.textContent='Engineering evolution: Nexa began as a MERN conversation workspace and was iteratively refactored into a production command center using protected feature splinters, preview deployments, mixed-runtime CI, and evidence-first specialist boundaries.';
+  note.textContent='Shipped evolution: Nexa began as a MERN conversation app and was rebuilt through protected engineering splinters into a production AI command center with deterministic-vs-AI authority boundaries, mixed-runtime CI, preview-driven QA, and a premium developer-tool interface.';
+
+  const liveLink=[...card.querySelectorAll('.card-actions a')].find(link=>link.textContent.includes('Open live app'));
+  if(liveLink){
+    liveLink.href='https://mern-ai-chat-bot-one.vercel.app/?view=overview';
+    liveLink.setAttribute('aria-label','Open Nexa AI Engineering Command Center');
+  }
 }
 
 refreshNexaPortfolioCard();
